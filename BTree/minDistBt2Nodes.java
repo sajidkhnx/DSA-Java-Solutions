@@ -55,14 +55,14 @@ public static Node lca(Node root, int n1,int n2){
 }
 public static int dist(Node root, int n){
     if(root == null){
-        return -1;
+        return -1; // kuc hai hi nhi
     }
     if(root.data == n){
-        return 0;
+        return 0; // overlap ho rha matlab jis node pr hai hum whi pr value mill gyi 
     }
 
-    int leftdist = dist(root.left,n);
-    int rightdist = dist(root.right,n);
+    int leftdist = dist(root.left,n); // nhi to left dekho 
+    int rightdist = dist(root.right,n); // nhi to right dekho
 
     if(leftdist == -1 && rightdist ==-1){
         return -1;
