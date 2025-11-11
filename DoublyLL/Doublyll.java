@@ -9,7 +9,7 @@ public class Doublyll {
             this.data = data;
             this.next = null;
             this.prev = null;
-        }
+        } // intialization
     }
     public Node head;
     public Node tail;
