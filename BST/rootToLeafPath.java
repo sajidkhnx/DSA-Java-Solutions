@@ -1,5 +1,5 @@
 import java.util.*;
-public class findInrange {
+public class rootToLeafPath {
 
     public static class Node{
         int data;
@@ -24,6 +24,7 @@ public static Node insert (Node root, int val){
     }
     return root;
 }
+
 public static void inorder(Node root){
     if(root==null){
         return;
@@ -32,53 +33,21 @@ public static void inorder(Node root){
     System.out.print(root.data+" ");
     inorder(root.right);
 }
-// Searching Key Value in BST
-public static boolean search(Node root,int val){
-    if(root==null) return false; // condition 1
-
-    if(root.data==val) return true; // key found at root
-
-    if(root.data>val){
-        return search(root.left,val); // go left
-    }
-    else{
-        return search(root.right,val); // go right
-    }
-}
-
-// find in range question 
-public static void printInRange(Node root, int k1,int k2){
-    if(root==null){
-        return;
-    }
-    if(root.data >=k1 && root.data<=k2){
-        printInRange(root.left, k1, k2);
-        System.out.print(root.data+" ");
-        printInRange(root.right, k1, k2);
-    }
-    else if(root.data<k1){
-        printInRange(root.left, k1, k2);
-    }
-    else{
-        printInRange(root.right, k1, k2);
-    }
-}
 //Root to leaf Node or last node path
-
 public static void printPath(ArrayList<Integer>path){
     for(int i=0; i<path.size(); i++){
-        System.out.print(path.get(i)+"->");
+        System.out.print(path.get(i)+" --> ");
     }
-    System.out.println();
+    System.out.println("Null");
 }
 public static void printRoot2leaf (Node root,ArrayList<Integer>path){
     if (root==null){
         return;
     }
+    path.add(root.data);
     if (root.left==null && root.right==null){
         printPath(path);
     }
-    path.add(root.data);
     printRoot2leaf(root.left, path);
     printRoot2leaf(root.right, path);
     path.remove(path.size()-1);
@@ -89,10 +58,11 @@ public static void main(String[] args) {
     for(int i=0;i<val.length;i++){
         root = insert(root, val[i]);
     }
+    // inorder(root);
+    // System.out.println();
 
-    inorder(root);
-    System.out.println();
+    printRoot2leaf(root, new ArrayList<>());
+}
+} 
+    
 
-    printInRange(root, 5, 12);
-}
-}
