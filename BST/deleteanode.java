@@ -58,7 +58,6 @@ public static Node delete (Node root,int val){
             return null;
         }
         // Case 2 : - single node
-
         if(root.left == null){
             return root.right;
         }
