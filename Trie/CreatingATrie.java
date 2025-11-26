@@ -1,3 +1,5 @@
+import javax.print.DocFlavor.STRING;
+
 public class CreatingATrie {
     static class Node{
         Node children [] = new Node [26];
@@ -31,6 +33,7 @@ public class CreatingATrie {
         }
         return curr.eow == true;
     }
+     
     public static boolean wordBreak(String key){
         if(key.length()==0){
             return true;
@@ -53,4 +56,7 @@ public class CreatingATrie {
         }
         System.out.println(wordBreak("f"));
     }
+     String cls = "running out of time ??";
 }
+
+
