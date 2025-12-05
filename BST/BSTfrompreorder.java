@@ -1,5 +1,5 @@
 import java.util.*;
-public class builtBst {
+public class BSTfrompreorder {
 
     public static class Node{
         int data;
@@ -30,7 +30,7 @@ public static void inorder(Node root){
     }
     inorder(root.left);
     System.out.print(root.data+" ");
-    inorder(root.right);    
+    inorder(root.right);
 }
 
 public static void main(String[] args) {
