@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.LinkedList;
-public class BSF {
+public class BFS {
     static class Edge{
         int src;
         int dest;

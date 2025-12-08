@@ -1,6 +1,6 @@
 import java.util.*;
 import java.util.LinkedList;
-public class BFS_DFS_Components {
+public class TestGraph {
     static class Edge{
         int src;
         int dest;
@@ -29,12 +29,12 @@ static void createGraph(ArrayList<Edge>[] graph, int V) {
 */
 
         // 0
-        graph[0].add(new Edge(0, 1, 1));
-        graph[0].add(new Edge(0, 2, 1));
+        graph[0].add(new Edge(0, 1, 1)); // 0[0]
+        graph[0].add(new Edge(0, 2, 1)); // 0[1]
 
         // 1
-        graph[1].add(new Edge(1, 0, 1));
-        graph[1].add(new Edge(1, 3, 1));
+        graph[1].add(new Edge(1, 0, 1));// 1[0]
+        graph[1].add(new Edge(1, 3, 1)); // 1 [1]
 
         // 2
         graph[2].add(new Edge(2, 0, 1));
@@ -56,37 +56,8 @@ static void createGraph(ArrayList<Edge>[] graph, int V) {
         // 6
         graph[6].add(new Edge(6, 5, 1));
     }
-    
-public static void bfs(ArrayList<Edge> graph[]){
-    boolean vis[] = new boolean[graph.length];
-    for(int i=0;i<graph.length;i++){
-        if (!vis[i]) {
-            bfsutil(graph,vis);
-        }
-    }
-}    
-public static void bfsutil(ArrayList<Edge> graph[], boolean vis[]){
-    Queue<Integer> q = new LinkedList<>();
-    q.add(0);// source = 0 ;
-    while (!q.isEmpty()) {
-        int curr = q.remove();
-        if(!vis[curr]){
-            System.out.print("-->"+curr);
-            vis[curr] = true;
-            for(int i=0;i<graph[curr].size();i++){
-                Edge e = graph[curr].get(i);
-                q.add(e.dest);
-            }
-        }
-    }
-}
-public static void dfs(ArrayList<Edge>[]graph){
-    boolean vis[] = new boolean[graph.length];
-    for(int i=0;i<graph.length;i++){
-        dfsutil(graph,i,vis);
-    }
-}
-public static void dfsutil (ArrayList<Edge> graph[],int curr,boolean vis[]){
+
+public static void dfs (ArrayList<Edge> graph[],int curr,boolean vis[]){
     //visit
     System.out.println(curr+"");
     vis[curr] = true;
@@ -94,14 +65,17 @@ public static void dfsutil (ArrayList<Edge> graph[],int curr,boolean vis[]){
     for(int i=0;i<graph[curr].size();i++){
         Edge e = graph[curr].get(i); 
         if(!vis[e.dest]){
-            dfsutil(graph, e.dest, vis); // recursion to visit graph
+            dfs(graph, e.dest, vis); // recursion to visit graph
     }
 }
 }
+
 public static void main(String[] args) {
     int V = 7; 
     ArrayList<Edge>[] graph = new ArrayList[V];
     createGraph(graph,V);
-    bfs(graph);
+    // dfs(graph, 0, new boolean[V]);
+        // System.out.println(hasPath(graph, 0, 7, new boolean[V]));
+        System.out.println( "This--->>> "+graph[1].get(1).dest); // graph --> Array --> ArrayList --> Edge 
 }
 }
