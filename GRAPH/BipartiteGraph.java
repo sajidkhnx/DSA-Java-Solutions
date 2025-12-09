@@ -17,18 +17,6 @@ static void createGraph(ArrayList<Edge>[] graph, int V) {
             graph[i] = new ArrayList<>();
         }
 
-        /*
-        GRAPH FROM IMAGE
-        -----------------
-
-               1 ---- 3
-              /        \
-             0          5 ---- 6
-              \        /
-               2 ---- 4
-*/
-
-        // 0
    graph[0].add(new Edge(0, 1, 1));
    graph[0].add(new Edge(0, 2, 1));
 

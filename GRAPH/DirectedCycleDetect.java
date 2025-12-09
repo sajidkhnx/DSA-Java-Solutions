@@ -59,6 +59,6 @@ public static void main(String[] args) {
     int V = 7; 
     ArrayList<Edge>[] graph = new ArrayList[V];
     createGraph(graph,V);
-    System.out.println(isCycle(graph));
+    System.out.println(isCycle(graph)?"Cycle Exist in graph":"Cycle Don't Exist in Graph");
 }
 }
