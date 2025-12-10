@@ -48,7 +48,6 @@ public static void topSort(ArrayList<Edge>[]graph){
         }
     }
     // bfs
-
     while(!q.isEmpty()){
         int curr = q.remove();
         System.out.print(curr+" ");
