@@ -49,7 +49,7 @@ public static void topSortUtil(ArrayList<Edge>[]graph, int curr, boolean []vis, 
             topSortUtil(graph, e.dest, vis, s);
         }
     }
-     s.add(curr);
+     s.add(curr); 
 }
 public static void main(String[] args) {
     int V = 6; 
