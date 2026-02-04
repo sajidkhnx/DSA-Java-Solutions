@@ -69,5 +69,6 @@ public static void main(String[] args) {
     // dfs(graph, 0, new boolean[V]);
         // System.out.println(hasPath(graph, 0, 7, new boolean[V]));
     bellmanFord(graph, 0);
+    // TC (O(v*E))
 }
 }
