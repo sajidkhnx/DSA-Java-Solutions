@@ -51,7 +51,7 @@ static void createGraph(ArrayList<Edge>[] graph, int V) {
 
 
 public static void prims(ArrayList<Edge>[] graph){
-    boolean vis [] = new boolean[graph.length];
+    boolean vis [ ] = new boolean[graph.length];
     PriorityQueue <Pair> pq = new PriorityQueue<>();
     pq.add(new Pair (0,0));
     int finalCost =  0; // MST Cost / total min weight
